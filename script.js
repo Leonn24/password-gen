@@ -13,5 +13,35 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
+
+function generatePassword() {
+
+}
+
+function userPrompt() {
+    charLength = prompt("Number of characters you'd like your password to be? (8-128)");
+    if (charLength < 8 || charLength > 128) {
+        alert("Numbers of characters must be at least 8-128! Try Again!");
+        
+    }
+
+    if (confirm("Would you like lowercase letters in your password?")) {
+        choiceInput = choiceInput.concat(lowerAlpha);
+    }
+
+    if (confirm("Would you like uppercase letters in your password?")) {
+        choiceInput = choiceInput.concat(upperCaseAlpha);
+    }
+    
+    if (confirm("Would you like numbers in your password?")) {
+        choiceInput = choiceInput.concat(numberSelect);
+    }
+    
+    if (confirm("Would you like special characters in your password?")) {
+        choiceInput = choiceInput.concat(specialChar);
+    }
+    
+}
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
