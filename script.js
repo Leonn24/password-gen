@@ -7,6 +7,8 @@ var specialChar = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_",]
 var generateBtn = document.querySelector("#generate");
 var generateBtn = document.querySelector("#generate");
 
+generateBtn.addEventListener("click", writePassword);
+
 
 function writePassword() {
     userPrompt();
@@ -22,13 +24,15 @@ function generatePassword() {
         newPass = newPass + choiceInput[randomChar];
 
         }
-
+        return newPass;
 }
 
 function userPrompt() {
+    choiceInput = [];
     charLength = prompt("Number of characters you'd like your password to be? (8-128)");
     if (charLength < 8 || charLength > 128) {
         alert("Numbers of characters must be at least 8-128! Try Again!");
+        return false;
         
     }
 
@@ -47,7 +51,7 @@ function userPrompt() {
     if (confirm("Would you like special characters in your password?")) {
         choiceInput = choiceInput.concat(specialChar);
     }
+    return true;
     
 }
 
-generateBtn.addEventListener("click", writePassword);
