@@ -7,14 +7,21 @@ var specialChar = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_",]
 var generateBtn = document.querySelector("#generate");
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+
 function writePassword() {
+    userPrompt();
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
 
 function generatePassword() {
+    var newPass = "";
+    for (i = 0; i < charLength; i++) {
+        var randomChar = Math.floor(Math.random() * choiceInput.length);
+        newPass = newPass + choiceInput[randomChar];
+
+        }
 
 }
 
@@ -43,5 +50,4 @@ function userPrompt() {
     
 }
 
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
