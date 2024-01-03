@@ -1,15 +1,19 @@
+// Set initial character length, input choices, and character sets //
+
 var charLength = 8;
 var choiceInput = [];
 var lowerAlpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var upperCaseAlpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var numberSelect = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var specialChar = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_",]
-// I noticed that there is a better way to do the characters but this is how I initially figured it out on my own before googling //
 var generateBtn = document.querySelector("#generate");
 var generateBtn = document.querySelector("#generate");
+
+// Select the button with the id "generate" from the HTML //
 
 generateBtn.addEventListener("click", writePassword);
 
+// Function to write the generated password to the HTML page //
 
 function writePassword() {
     userPrompt();
@@ -17,6 +21,8 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
+
+// Function to generate a password based on user criteria //
 
 function generatePassword() {
     var newPass = "";
@@ -28,6 +34,8 @@ function generatePassword() {
         return newPass;
 }
 
+// Function to prompt the user for password criteria //
+
 function userPrompt() {
     choiceInput = [];
     charLength = prompt("Number of characters you'd like your password to be? (8-128)");
@@ -36,8 +44,6 @@ function userPrompt() {
         return false;
         
     }
-
-    // I tried to do if/else but I couldn't get it to work and was able to get it to work using "confirm" //
 
     if (confirm("Would you like lowercase letters in your password?")) {
         choiceInput = choiceInput.concat(lowerAlpha);

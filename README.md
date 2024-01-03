@@ -26,4 +26,9 @@ WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 ```
 
-![Screenshot](/stylesheet/images/PasswordgenSS.png)
+## Link to Repo
+https://github.com/Leonn24/password-gen
+
+## Screenshots
+![PasswordOutput](/assets/images/PasswordgenSS.png)
+![Input](/assets/images/PasswordInput.png)
